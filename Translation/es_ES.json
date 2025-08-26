@@ -1,0 +1,15 @@
+{
+  "software": "Software",
+  "installation": "Instalación",
+  "registered": "Registrado",
+  "limits": "Límites",
+  "min-fs-version": "Versión min. Core",
+  "plugins-required": "Plugins requeridos",
+  "min-php-version": "Min. PHP",
+  "php-extensions-required": "Extensiones PHP requeridas",
+  "environment": "Entorno",
+  "server-software": "Software del servidor",
+  "operating-system": "Sistema operativo",
+  "server-accepts-filesize": "Tamaño máx. subida archivos",
+  "php-extensions": "Extensiones PHP"
+}
