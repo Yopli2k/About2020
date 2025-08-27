@@ -63,7 +63,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="text-center p-3">
-                                        <i class="fa-solid fa-users fa-2x text-primary mb-2"></i>
+                                        <i class="fa-solid fa-users fa-3x text-primary mb-2"></i>
                                         <h6 class="mb-1">{{ trans('users') }}</h6>
                                         <p class="mb-0">
                                             {% set userCount = fsc.data.limits.users is defined ? fsc.data.limits.users : 0 %}
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="text-center p-3">
-                                        <i class="fa-solid fa-box fa-2x text-success mb-2"></i>
+                                        <i class="fa-solid fa-box fa-3x text-success mb-2"></i>
                                         <h6 class="mb-1">{{ trans('products') }}</h6>
                                         <p class="mb-0">
                                             {% set productCount = fsc.data.limits.products is defined ? fsc.data.limits.products : 0 %}
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="text-center p-3">
-                                        <i class="fa-solid fa-user-tie fa-2x text-info mb-2"></i>
+                                        <i class="fa-solid fa-user-tie fa-3x text-info mb-2"></i>
                                         <h6 class="mb-1">{{ trans('customers') }}</h6>
                                         <p class="mb-0">
                                             {% set customerCount = fsc.data.limits.customers is defined ? fsc.data.limits.customers : 0 %}
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="text-center p-3">
-                                        <i class="fa-solid fa-file-invoice fa-2x text-warning mb-2"></i>
+                                        <i class="fa-solid fa-file-invoice fa-3x text-warning mb-2"></i>
                                         <h6 class="mb-1">{{ trans('invoices') }}</h6>
                                         <p class="mb-0">
                                             {% set invoiceCount = fsc.data.limits.invoices is defined ? fsc.data.limits.invoices : 0 %}
@@ -141,7 +141,7 @@
                                     </thead>
                                     <tbody>
                                     {% for plugin in fsc.data.plugins %}
-                                        <tr class="{{ plugin.enabled ? 'table-success' : 'table-secondary' }}">
+                                        <tr class="{{ plugin.enabled ? 'table-success' : 'table-light' }}">
                                             <td>
                                                 <strong>{{ plugin.name }}</strong>
                                                 <small class="text-muted">v{{ plugin.version }}</small>
