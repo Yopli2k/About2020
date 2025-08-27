@@ -20,19 +20,27 @@
 namespace FacturaScripts\Plugins\About2020\Controller;
 
 use FacturaScripts\Core\Base\Controller;
+use FacturaScripts\Core\Base\ControllerPermissions;
 use FacturaScripts\Core\Kernel;
+use FacturaScripts\Core\KernelException;
 use FacturaScripts\Core\Plugins;
 use FacturaScripts\Dinamic\Model\User;
 use FacturaScripts\Dinamic\Model\Producto;
 use FacturaScripts\Dinamic\Model\Cliente;
 use FacturaScripts\Dinamic\Model\FacturaCliente;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Response;
 
 class About extends Controller
 {
     /** @var array */
     public array $data = [];
 
+    /**
+     * Return the basic data for this page.
+     *
+     * @return array
+     */
     public function getPageData(): array
     {
         $data = parent::getPageData();
@@ -42,6 +50,14 @@ class About extends Controller
         return $data;
     }
 
+    /**
+     * Runs the controller's private logic.
+     *
+     * @param Response $response
+     * @param User $user
+     * @param ControllerPermissions $permissions
+     * @throws KernelException
+     */
     public function privateCore(&$response, $user, $permissions)
     {
         parent::privateCore($response, $user, $permissions);
@@ -58,21 +74,26 @@ class About extends Controller
         ];
     }
 
+    /**
+     * Get counts of various models for limits display.
+     *
+     * @return array
+     */
     private function getLimits(): array
     {
-        // Contar usuarios
+        // Users
         $userModel = new User();
         $users = $userModel->count();
 
-        // Contar productos
+        // Products
         $productoModel = new Producto();
         $products = $productoModel->count();
 
-        // Contar clientes
+        // Customers
         $clienteModel = new Cliente();
         $customers = $clienteModel->count();
 
-        // Contar facturas de cliente
+        // Customer Invoices
         $facturaModel = new FacturaCliente();
         $invoices = $facturaModel->count();
 
